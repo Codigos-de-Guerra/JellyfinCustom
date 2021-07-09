@@ -1,0 +1,10 @@
+Install NSSM for service creation on windows
+
+Install Caddy for proxying
+
+Configure Caddyfile as you know
+
+Create a all time functioning service for caddy:
+	Create a caddy.bat and insert the caddy run command with your Caddyfile
+
+
