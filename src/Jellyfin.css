@@ -1,3 +1,6 @@
+/* Purple Haze RGB = 125, 112, 152 */
+/* Generally using alfa = 0.3 in opacity for purple haze*/
+
 /* Background image on Login Page */
 #loginPage {
   background: url("https://wallpaperaccess.com/full/2217392.jpg");
@@ -36,6 +39,22 @@
 .listItem-content {height: 115px;}
 .secondary.listItem-overview.listItemBodyText {height: 61px; margin: 0;}
 
+/* Icons for configs and options */
+span.listItemIcon.material-icons {
+    background: var(--accent-icon);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: green;
+}
+
+span.material-icons.detailButton-icon.check.playstatebutton-icon-played,
+span.material-icons.detailButton-icon.favorite.ratingbutton-icon-withrating {
+    background: var(--accent-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: green;
+}
+
 
 /* ------------- <Cast and Crew Info> ----------------- */
 /* Shrink and square (or round) cast thumnails */
@@ -72,15 +91,38 @@
 /* ---------------- </Minimalistic Login Page> -------------- */
 
 
-/* ----------- <Hovering Centered Configs> ---------------- */
-/*Image streching fix*/
+/*Rounded corners and square hover buttons*/
+.cardContent-button, 
+.cardContent-shadow, 
+.itemDetailImage, 
+.cardOverlayButton-hover, 
+.cardOverlayContainer,
+.cardImageContainer,
+.cardPadder,
+.listItemImage,
+.listItemImageButton,
+.listItemButton,
+.headerButton,
+.paper-icon-button-light,
+.innerCardFooter,
+.blurhash-canvas,
+.actionSheetMenuItem:hover,
+.dialog
+{border-radius: 10px !important;}
 
-img {
-    -o-object-fit: cover;
-    object-fit: cover;
-}
+/*Theme some dialogues*/
+.dialog {background-color: rgba(0, 0, 0, 0.9);}
+.actionSheetMenuItem:hover {background-color: rgba(0, 164, 220, 0.2);}
+.mainDrawer {background-color: rgba(49, 45, 64, 0.9);}
+.navMenuOption:hover {background: rgba(0, 164, 220, 0.2);}
 
-/* Hover */
+/*Tweak series/movie/album title screen*/
+.itemProgressBar {height: 2.5px; background: rgba(0,0,0,0); color: green;}
+.cardIndicators {right: 0.3em; top: 0.3em;}
+.paper-icon-button-light:hover {background-color: rgba(125, 112, 152, 0.3);}
+
+/* ---------- <Hovering Configs> ---------- */
+/* Setting up*/
 .emby-input,
 .emby-textarea {
     color: inherit;
@@ -115,10 +157,7 @@ img {
     top: 0;
 }
 
-.actionSheetMenuItem:hover {
-    background: rgb(217, 0, 0) !important;
-}
-
+/* Main for hovering */
 .cardBox {
     background: rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -136,16 +175,8 @@ img {
     overflow: hidden;
 }
 
-.layout-mobile .card:hover .cardBox {
-    background: rgba(0, 0, 0, 0.25) !important;
-}
-
-.layout-mobile .cardImageContainer {
-    background-size: cover;
-}
-
-.layout-mobile .card:hover .cardImageContainer {
-    background-size: cover;
+.raised:hover::before {
+    opacity: 100%;
 }
 
 .overflowSquareCard .cardImageContainer {
@@ -202,6 +233,7 @@ img {
     transform: scale(1.2);
 }
 
+/* Extras */
 .progressring-bg {
     border: .25em solid transparent;
     background: transparent;
@@ -259,61 +291,18 @@ img {
 .listItem-border.emby-button .listItemIcon {
     transition: margin-right .2s;
 }
+/* ---------- </Hovering Configs> ---------- */
 
-span.listItemIcon.material-icons {
-    background: var(--accent-icon);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+
+/* Mobile setting */
+.layout-mobile .card:hover .cardBox {
+    background: rgba(0, 0, 0, 0.25) !important;
 }
 
-.defaultCardBackground {
-    background: transparent;
+.layout-mobile .cardImageContainer {
+    background-size: cover;
 }
 
-.cardImageIcon {
-    background: var(--accent);
-    color: transparent;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
+.layout-mobile .card:hover .cardImageContainer {
+    background-size: cover;
 }
-
-.navMenuOption-selected {
-    background: var(--accent-selected) !important;
-}
-
-span.material-icons.detailButton-icon.check.playstatebutton-icon-played,
-span.material-icons.detailButton-icon.favorite.ratingbutton-icon-withrating {
-    background: var(--accent-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.raised::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    z-index: -1;
-    background: var(--accent);
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity .2s ease-in-out;
-}
-
-.raised:hover::before {
-    opacity: 100%;
-}
-
-.dashboardSection .defaultCardBackground {
-    color: white;
-}
-
-#indexPage .raised::before {
-    background: transparent;
-}
-/* ------------- </Hovering Centered Configs> ------------ */
-
